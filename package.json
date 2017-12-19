@@ -4,6 +4,10 @@
   "description": "A bot for Daily Life and Deadly Life alike. Runs FTEs, School Store, Investigation, and Trials!",
   "main": "bot.js",
   "author": "Pixelstyx",
+  "engines": 
+  {
+    "node": "6.11.1"
+  },
   "dependencies": 
   {
     "discord.io": "^2.5.3",
