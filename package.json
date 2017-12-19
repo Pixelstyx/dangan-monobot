@@ -16,7 +16,6 @@
   },
   "scripts": 
   {
-    "start": "node myapp.js",
-    "heroku-postbuild": "compile-if-needed"
+    "start": "node bot.js",
   }
 }
