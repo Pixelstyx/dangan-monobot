@@ -9,4 +9,8 @@
     "sqlite": "^2.9.0",
     "winston": "^2.4.0"
   }
+  "scripts": {
+  "start": "node myapp.js",
+  "heroku-postbuild": "compile-if-needed"
+  }
 }
