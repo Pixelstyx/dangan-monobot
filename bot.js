@@ -10,12 +10,6 @@ logger.add(logger.transports.Console, {
 });
 logger.level = 'debug';
 
-var http = require('http');
-var port = process.env.PORT || 3000;
-http.listen(port, function () {
-  console.log('My server is now running on http://localhost:' + port);
-});
-
 // Initialize Discord Bot
 var bot = new Discord.Client({
    token: auth.token,
