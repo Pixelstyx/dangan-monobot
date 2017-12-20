@@ -451,3 +451,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 });
 
 client.login(process.env.TOKEN);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    // will echo 'Our app is running on http://localhost:5000 when run locally'
+    console.log('Our app is running on http://localhost:' + port);
+});
