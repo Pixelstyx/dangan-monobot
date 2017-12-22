@@ -1,15 +1,9 @@
-var Discord = require('discord.io');
-var auth = require('./auth.json');
+var Discord = require('discord.js');
+const client = new Discord.Client();
 const sql = require("sqlite");
 sql.open("./stats.sqlite");
 
-// Initialize Discord Bot
-var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
-});
-bot.on('ready', function (evt) {
-    
+client.on('ready', () => {
 });
 
 });
@@ -20,13 +14,14 @@ bot.on('ready', function (evt) {
 //This is for the present names, descriptions, and like values
 //sql.run("CREATE TABLE IF NOT EXISTS presentdata (number INTEGER, name TEXT, desc TEXT, like1 DOUBLE, like2 DOUBLE, like3 DOUBLE, like4 DOUBLE, like5 DOUBLE, like6 DOUBLE, like7 DOUBLE, like8 DOUBLE, like9 DOUBLE, like10 DOUBLE, like11 DOUBLE, like12 DOUBLE, like13 DOUBLE, like14 DOUBLE, like15 DOUBLE, like16 DOUBLE)"); 
 
-bot.on('message', function (user, userID, channelID, message, evt) {
+client.on('message', msg => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
 
-	if (message.channel.type !== "dm") return; // All commands must be DM, or they won't work. This is to hide commands from other players.
+    if (message.channel.type !== "dm") return; // All commands must be DM, or they won't work. This is to hide commands from other players.
 
-    if (message.substring(0, 1) == '!') {
+    if (message.substring(0, 1) == '!') 
+    {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
        
