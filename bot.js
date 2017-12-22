@@ -21,6 +21,15 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
 
+client.login(process.env.TOKEN);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    // will echo 'Our app is running on http://localhost:5000 when run locally'
+    console.log('Our app is running on http://localhost:' + port);
+});
+
 //This is for each player's FTE data
 //sql.run("CREATE TABLE IF NOT EXISTS fteData (userID TEXT, playersApproached INTEGER, approachedBy INTEGER, shards1 INTEGER, shards2 INTEGER, shards3 INTEGER, shards4 INTEGER, shards5 INTEGER, shards6 INTEGER, shards7 INTEGER, shards8 INTEGER, shards9 INTEGER, shards10 INTEGER, shards11 INTEGER, shards12 INTEGER, shards13 INTEGER, shards14 INTEGER, shards15 INTEGER, shard16 INTEGER)");
 
@@ -448,13 +457,4 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
          }
      }
-});
-
-client.login(process.env.TOKEN);
-
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-    // will echo 'Our app is running on http://localhost:5000 when run locally'
-    console.log('Our app is running on http://localhost:' + port);
 });
