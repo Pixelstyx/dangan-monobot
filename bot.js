@@ -1,14 +1,7 @@
-var Discord = require('discord.io');
-var logger = require('winston');
+var Discord = require('discord.js');
 var auth = require('./auth.json');
 const sql = require("sqlite");
 sql.open("./stats.sqlite");
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(logger.transports.Console, {
-    colorize: true
-});
-logger.level = 'debug';
 
 // Initialize Discord Bot
 var bot = new Discord.Client({
@@ -16,18 +9,9 @@ var bot = new Discord.Client({
    autorun: true
 });
 bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    
 });
 
-client.login(process.env.TOKEN);
-
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-    // will echo 'Our app is running on http://localhost:5000 when run locally'
-    console.log('Our app is running on http://localhost:' + port);
 });
 
 //This is for each player's FTE data
@@ -458,3 +442,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
          }
      }
 });
+
+client.login(process.env.TOKEN);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    // will echo 'Our app is running on http://localhost:5000 when run locally'
+    console.log('Our app is running on http://localhost:' + port);
