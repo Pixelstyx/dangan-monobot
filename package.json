@@ -22,9 +22,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pixelstyx/dangan-monobot.git"
-  },
-  "keywords": [
-    "heroku",
-    "discord.js"
-  ]
+  }
 }
