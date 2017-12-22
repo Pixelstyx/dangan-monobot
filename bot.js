@@ -1,4 +1,4 @@
-var Discord = require('discord.js');
+var Discord = require('discord.io');
 var auth = require('./auth.json');
 const sql = require("sqlite");
 sql.open("./stats.sqlite");
